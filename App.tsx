@@ -15,6 +15,7 @@ export default function App() {
              <Text>{text}</Text>
              <Text>u</Text>
              <Text>aiuoe</Text>
+             <View style={styles.box}/>
           </View>
       )}
     </View>
@@ -28,4 +29,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  box:{
+    width:150,
+    height:150,
+    backgroundColor:"blue",
+    borderWidth:1,
+    corderColor:"black"
+  }
 });
