@@ -13,6 +13,7 @@ export default function App() {
           <View>
              <Text>aaaaa</Text>
              <Text>{text}</Text>
+             <Text>u</Text>
           </View>
       )}
     </View>
