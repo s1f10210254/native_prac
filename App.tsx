@@ -5,7 +5,7 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function App() {
   const [test, setTest] = useState(true)
   const [text] = useState("text")
-  console.log(test)
+  console.log(text)
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
@@ -14,6 +14,7 @@ export default function App() {
              <Text>aaaaa</Text>
              <Text>{text}</Text>
              <Text>u</Text>
+             <Text>aiuoe</Text>
           </View>
       )}
     </View>
