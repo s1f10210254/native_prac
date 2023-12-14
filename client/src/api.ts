@@ -1,5 +1,5 @@
 // src/api.ts
-const BASE_URL = 'http://192.168.x.x:3000'; // バックエンドサーバーのアドレス
+const BASE_URL = 'http://192.168.11.60:3000'; // バックエンドサーバーのアドレス
 
 export const fetchGreeting = async () => {
   try {
