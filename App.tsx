@@ -4,16 +4,16 @@ import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   const [test, setTest] = useState(true)
+  const [text] = useState("text")
   console.log(test)
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app kodgksaogksgggg</Text>
       <StatusBar style="auto" />
       {test &&(
-        
-            <Text>aaaaa</Text>
-        
-        
+          <View>
+             <Text>aaaaa</Text>
+             <Text>{text}</Text>
+          </View>
       )}
     </View>
   );
