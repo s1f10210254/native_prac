@@ -7,9 +7,9 @@ app.get('/', (req: Request, res: Response) => {
   res.send('Hello World!');
 });
 
-app.get('/api/greet', (req:Request, res:Response)=>{
-    res.json({message: 'こんにちは!NodejsとExpressのAPIへようこそ'})
-})
+app.get('/api/greet', (req: Request, res: Response) => {
+  res.json({ message: 'こんにちは!NodejsとExpressのAPIへようこそ' });
+});
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);

@@ -15,12 +15,13 @@ export default function App() {
 
   console.log(apiData)
   return (
-    <View style={styles.container}>
+                    <View style={styles.container}>
       <StatusBar style="auto" />
       
       {apiData && (
         <Text>Data from API: {JSON.stringify(apiData)}</Text>
       )}
+      <Text>testtesttes</Text>
     </View>
   );
 }
