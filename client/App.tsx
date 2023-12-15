@@ -9,7 +9,10 @@ export default function App() {
   const [Db, setDb] = useState(null);
   useEffect(() => {
     fetchGreeting()
-      .then((data) => setApiData(data))
+      .then((data) =>
+        // console.log(typeof data)
+        setApiData(data)
+      )
       .catch((error) => console.error('API error:', error));
 
     fetchUsers()
@@ -23,7 +26,7 @@ export default function App() {
     <View style={styles.container}>
       <StatusBar style="auto" />
 
-      {apiData && <Text>Data from API: {JSON.stringify(apiData)}</Text>}
+      {apiData && <Text>API: {JSON.stringify(apiData)}</Text>}
       {Db && <Text>{JSON.stringify(Db)}</Text>}
 
       <Text>test</Text>
