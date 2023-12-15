@@ -1,5 +1,5 @@
-client
+client  
 `$npm start`
 
-server
+server  
 `$npm run dev`
