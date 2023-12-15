@@ -2,24 +2,31 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import { fetchGreeting } from './src/api/api'; // APIリクエスト関数をインポート
+import { fetchGreeting, fetchUsers } from './src/api/api'; // APIリクエスト関数をインポート
 
 export default function App() {
   const [apiData, setApiData] = useState(null);
-
+  const [Db, setDb] = useState(null);
   useEffect(() => {
-    fetchGreeting()
-      .then((data) => setApiData(data))
-      .catch((error) => console.error('API error:', error));
+    // fetchGreeting()
+    //   .then((data) => setApiData(data))
+    //   .catch((error) => console.error('API error:', error));
+
+    fetchUsers()
+      .then((users) => setDb(users))
+      .catch((error) => console.error('API DB error', error));
   }, []);
 
-  console.log(apiData);
+  // console.log(apiData);
+  console.log('DB1', Db);
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
 
       {apiData && <Text>Data from API: {JSON.stringify(apiData)}</Text>}
-      <Text>testtesttes</Text>
+      {Db && <Text>{JSON.stringify(Db)}</Text>}
+
+      <Text>testtestte</Text>
     </View>
   );
 }
