@@ -17,7 +17,7 @@ export default function App() {
       .catch((error) => console.error('API DB error', error));
   }, []);
 
-  // console.log(apiData);
+  console.log(apiData);
   console.log('DB1', Db);
   return (
     <View style={styles.container}>
