@@ -26,7 +26,7 @@ export default function App() {
       {apiData && <Text>Data from API: {JSON.stringify(apiData)}</Text>}
       {Db && <Text>{JSON.stringify(Db)}</Text>}
 
-      <Text>testtestte</Text>
+      <Text>test</Text>
     </View>
   );
 }
