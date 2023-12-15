@@ -15,9 +15,13 @@ app.get('/api/greet', (req: Request, res: Response) => {
 });
 
 app.get('/api/users', async (req: Request, res: Response) => {
-  const users = await prisma.user.findMany();
-  console.log('back users', users);
-  res.json(users);
+  const usersIds = await prisma.user.findMany({
+    select: {
+      id: true,
+    },
+  });
+  console.log('back users', usersIds);
+  res.json(usersIds);
 });
 
 app.listen(port, () => {

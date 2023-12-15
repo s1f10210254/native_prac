@@ -6,13 +6,10 @@ import { fetchGreeting, fetchUsers } from './src/api/api'; // APIリクエスト
 
 export default function App() {
   const [apiData, setApiData] = useState(null);
-  const [Db, setDb] = useState(null);
+  const [Db, setDb] = useState<{} | null>(null);
   useEffect(() => {
     fetchGreeting()
-      .then((data) =>
-        // console.log(typeof data)
-        setApiData(data)
-      )
+      .then((data) => setApiData(data))
       .catch((error) => console.error('API error:', error));
 
     fetchUsers()
