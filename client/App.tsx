@@ -8,9 +8,9 @@ export default function App() {
   const [apiData, setApiData] = useState(null);
   const [Db, setDb] = useState(null);
   useEffect(() => {
-    // fetchGreeting()
-    //   .then((data) => setApiData(data))
-    //   .catch((error) => console.error('API error:', error));
+    fetchGreeting()
+      .then((data) => setApiData(data))
+      .catch((error) => console.error('API error:', error));
 
     fetchUsers()
       .then((users) => setDb(users))
