@@ -13,10 +13,12 @@ fastify.get('/', (request: FastifyRequest, reply: FastifyReply) => {
   reply.send({ hello: 'world' });
 });
 
-// Run the server!
-fastify.listen({ port: 3000 }, (err) => {
-  if (err) {
-    fastify.log.error(err);
+const start = async () => {
+  try {
+    await fastify.listen(3000);
+  } catch (err) {
+    fastify.console.log.console.error(err);
     process.exit(1);
   }
-});
+};
+start();
