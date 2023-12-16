@@ -14,13 +14,14 @@ server.get('/api/greet', (request: FastifyRequest, reply: FastifyReply) => {
   return { hello: 'world' };
 });
 
-server.get('/api/users', (request: FastifyRequest, reply: FastifyReply) => {
-  const userIds = prisma.user.findMany();
+server.get('/api/users', async (request: FastifyRequest, reply: FastifyReply) => {
+  const userIds = await prisma.user.findMany();
+  console.log('userid', userIds);
   return { userIds };
 });
 const start = async () => {
   try {
-    await server.listen(3000);
+    await server.listen({ port: 3000, host: '0.0.0.0' });
   } catch (err) {
     server.console.log.console.error(err);
     process.exit(1);
