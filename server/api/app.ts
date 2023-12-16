@@ -1,5 +1,7 @@
 //server/api/api.ts
 
+import { FastifyReply, FastifyRequest } from 'fastify';
+
 // import fastify from '../node_modules/fastify/fastify';
 // const server = fastify({
 //   logger: true,
@@ -7,7 +9,7 @@
 const fastify = require('fastify')({ logger: true });
 
 // Declare a route
-fastify.get('/', function handler(request, reply) {
+fastify.get('/', (request: FastifyRequest, reply: FastifyReply) => {
   reply.send({ hello: 'world' });
 });
 
