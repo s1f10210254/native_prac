@@ -1,25 +1,20 @@
 //server/api/api.ts
-import express, { Request, Response } from 'express';
-import { Prisma, PrismaClient } from '@prisma/client';
-const prisma = new PrismaClient();
 
-const app = express();
-const port = 3000;
+// import fastify from '../node_modules/fastify/fastify';
+// const server = fastify({
+//   logger: true,
+// });
+const fastify = require('fastify')({ logger: true });
 
-app.get('/', (req: Request, res: Response) => {
-  res.send('Hello World!');
+// Declare a route
+fastify.get('/', function handler(request, reply) {
+  reply.send({ hello: 'world' });
 });
 
-app.get('/api/greet', (req: Request, res: Response) => {
-  res.json({ message: 'こんにちは!NodejsとExpressのAPIへようこそ' });
-});
-
-app.get('/api/users', async (req: Request, res: Response) => {
-  const usersIds = await prisma.user.findMany();
-  console.log('back users', usersIds);
-  res.json(usersIds);
-});
-
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+// Run the server!
+fastify.listen({ port: 3000 }, (err) => {
+  if (err) {
+    fastify.log.error(err);
+    process.exit(1);
+  }
 });

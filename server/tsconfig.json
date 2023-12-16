@@ -1,14 +1,13 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "module": "commonjs",
+    "module": "CommonJS",
     "outDir": "./dist",
-    "strict": true,
+    // "strict": true,
     "esModuleInterop": true,
-    "rootDir": "./"  // rootDirをプロジェクトのルートに設定
+    "rootDir": "./" // rootDirをプロジェクトのルートに設定
   },
   "include": [
     "src/**/*",
-    "api/**/*"  // apiディレクトリを追加
+    "api/**/*" // apiディレクトリを追加
   ]
 }
